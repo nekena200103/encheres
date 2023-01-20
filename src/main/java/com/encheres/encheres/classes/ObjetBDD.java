@@ -14,9 +14,10 @@ public class ObjetBDD {
     public static Connection connect() {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/encheres";
-            String user = "dev";
-            String password = "123";
+            String url = "jdbc:postgresql://containers-us-west-114.railway.app:5996/railway";
+            String user = "postgres";
+            String password = "gXKcWUHc4v3mmO4ffWr6@containers-us-west-114.railway.app:5996/railway\";\r\n"
+            		+ "            String user = \"postgres\";";
             Connection connect = DriverManager.getConnection(url, user, password);
             return connect;
         } catch (Exception e) {

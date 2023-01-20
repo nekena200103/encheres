@@ -3,6 +3,7 @@ package com.encheres.encheres.controlller;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.encheres.encheres.classes.Enchere;
+import com.encheres.encheres.classes.EnchereRepository;
 import com.encheres.encheres.classes.Mise;
 import com.encheres.encheres.classes.ObjetBDD;
 
@@ -20,6 +22,8 @@ import com.encheres.encheres.classes.ObjetBDD;
 @RestController
 @RequestMapping("encheres")
 public class EnchereController {
+	@Autowired
+	EnchereRepository enchrepository;
     @GetMapping("")
     public ArrayList<Object> getListeEncheres(){
         Connection c=null;
